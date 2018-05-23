@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(129, 147, 240);
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 910px 1fr;
+    grid-auto-rows: 1fr 1fr;
+}
+
+#grid {
+    grid-area: 2 / 2 / 3 / 3;
+    /* position: fixed;
+    top: 15vh;
+    left: 25vw; */
+    width: 900px;
+    height: 780px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* border: 0.5rem outset rgb(58, 63, 64); */
+    border-radius: 5%;
+    align-self: stretch;
+}
+
+.slot {
+    width: 130px;
+    height: 130px;
+    background-color: rgb(58, 63, 64);
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slot div {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(129, 147, 240);
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 3px 3px;
+}
+
+@keyframes move1 {
+    from {
+        transform: scale(50%);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes move2 {
+    from {
+        transform: translate(0px, -600px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes move3 {
+    from {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.slot.player1 div {
+    background-image: url("facepalm.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation-name: move1;
+    animation-duration: 1s;
+    animation-name: move3;
+    animation-duration: 1s;
+}
+
+.slot.player2 div {
+    background-image: url("emoji13.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation-name: move2;
+    animation-duration: 1s;
+}
+
+.coin {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* background-color: black; */
+    /* display: none; */
+}
+
+#mousemove {
+    grid-area: 1 / 2 / 2 / 3;
+    height: 100px;
+    width: 910px;
+    align-self: end;
+    /* position: fixed;
+    left: 25vw;
+    top: 8vh; */
+    background-color: rgb(129, 147, 240);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#player1 {
+    /* background-color: purple; */
+    background-image: url("facepalm.gif");
+    height: 85px;
+    width: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#player2 {
+    background-image: url("emoji13.gif");
+    height: 85px;
+    width: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.leftSide {
+    grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+}
+
+.rightSide {
+    grid-area: 2 / 3 / 3 / 4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+}
+
+.smallLeft {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url("facepalm.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-self: center;
+    /* align-self: start; */
+    margin-top: 100px;
+}
+
+.smallRight {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url("emoji13.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-self: center;
+    /* align-self: center; */
+    margin-top: 100px;
+    /* border: 1px rgb(129, 147, 240) solid; */
+}
+
+.circle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid rgba(129, 147, 240, 1);
+    z-index: 100;
+}
+
+h1 {
+    height: 50px;
+    /* width: 200px; */
+    font-size: 35px;
+    /* font-style: italic; */
+    font-weight: bold;
+    color: rgb(58, 63, 64);
+    justify-self: center;
+    font-family: helvetica;
+    /* grid-row: 2 / 3; */
+    /* align-self: start; */
+    margin-bottom: 20px;
+}
+
+.leftCount {
+    justify-self: center;
+    font-family: helvetica;
+    font-size: 100px;
+    color: rgb(58, 63, 64);
+    font-weight: lighter;
+    margin-bottom: 300px
+}
+
+.rightCount {
+    justify-self: center;
+    font-family: helvetica;
+    font-size: 100px;
+    color: rgb(58, 63, 64);
+    font-weight: lighter;
+    margin-bottom: 300px
+}
+
+.myButton {
+    width: 270px;
+    height: 80px;
+    margin-bottom: 80px;
+    justify-self: center;
+    grid-area: 2 / 1 / 3 / 2;
+    align-self: end;
+    -moz-box-shadow: inset 0px 1px 0px 0px #fff6af;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fff6af;
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+    background: -moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23', GradientType=0);
+    background-color: #ffec64;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    border: 4px solid #dbaa60;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(58, 63, 64);
+    font-family: helvetica;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background: -moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64', GradientType=0);
+    background-color: #ffab23;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
